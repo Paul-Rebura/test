@@ -17,3 +17,4 @@ terraform {
         Name        = "My Unique Bucket for Terraform Demo"
         Environment = "Dev"
     }
+  }
