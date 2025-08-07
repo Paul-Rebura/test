@@ -13,4 +13,7 @@ terraform {
 
   resource "aws_s3_bucket" "name" {
     bucket = "my-unique-bucket-terraform-demo-07-08"
-  }
+    tags = {
+        Name        = "My Unique Bucket for Terraform Demo"
+        Environment = "Dev"
+    }
