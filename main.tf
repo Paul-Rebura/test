@@ -11,10 +11,23 @@ terraform {
   }
 }
 
-  resource "aws_s3_bucket" "name" {
-    bucket = "my-unique-bucket-terraform-demo-07-08"
-    tags = {
-        Name        = "My Unique Bucket for Terraform Demo"
-        Environment = "Dev"
-    }
+terraform {
+  backend "s3" {
+    bucket         = "my-backend-bucket-for-statefile"
+    key            = "codepipeline/pipeline.tfstate"
+    region         = "eu-west-2"
+    dynamodb_table = "terraform-locks"
+    encrypt        = true
   }
+}
+
+resource "aws_s3_bucket" "name" {
+  bucket = "my-unique-bucket-terraform-demo-07-08"
+  tags = {
+      Name        = "My Unique Bucket for Terraform Demo"
+      Environment = "Dev"
+  }
+}
+
+
+# terraform init -upgrade -backend-config="bucket=my-backend-bucket-for-statefile" -backend-config="key=codepipeline/pipeline.tfstate" -backend-config="region=eu-west-2" -backend-config="dynamodb_table=terraform-locks" -backend-config="encrypt=true"
