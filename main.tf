@@ -18,6 +18,7 @@ resource "aws_s3_bucket" "name" {
       Name        = "My Unique Bucket for Terraform Demo"
       Environment = "Dev"
       Owner       = "Paul"
+      Anotherowner    = "Ciprian"
   }
 }
 
