@@ -6,7 +6,7 @@ terraform {
 # terraform {
 #   backend "s3" {
 #     bucket = "my-backend-bucket-for-statefile"
-#     key    = "environments/${env}/terraform.tfstate"
+#     key    = "environments/${var.env}/terraform.tfstate"
 #     region = "eu-west-2"
 #     encrypt = true
 #   }
