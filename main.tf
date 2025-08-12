@@ -34,7 +34,7 @@ resource "aws_vpc" "name" {
 
 resource "aws_subnet" "first" {
   vpc_id            = aws_vpc.name.id
-  cidr_block        = "10.0.5.0.24"
+  cidr_block        = "10.0.5.0/24"
   availability_zone = "eu-west-2a"
   tags = {
     Name        = "My First Subnet for Terraform Demo"
