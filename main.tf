@@ -20,20 +20,21 @@ variable "env" {
 resource "aws_s3_bucket" "name" {
   bucket = "my-unique-bucket-terraform-demo-07-08-${var.env}"
   tags = {
-      Name        = "My Unique Bucket for Terraform Demo"
-      Environment = "Dev"
-      Owner       = "Paul"
-      Anotherowner    = "Ciprian"
+    Name         = "My Unique Bucket for Terraform Demo"
+    Environment  = "Dev"
+    Owner        = "Paul"
+    Anotherowner = "Ciprian"
+    TheLastOwner = "Tommy"
   }
 }
 
 resource "aws_vpc" "name" {
   cidr_block = "10.0.0.0/16"
   tags = {
-    Name        = "My VPC for Terraform Demo"
-    Environment = var.env
-    Owner       = "Paul"
-    Anotherowner    = "Ciprian"
+    Name         = "My VPC for Terraform Demo"
+    Environment  = var.env
+    Owner        = "Paul"
+    Anotherowner = "Ciprian"
   }
 }
 
@@ -42,9 +43,9 @@ resource "aws_subnet" "first" {
   cidr_block        = "10.0.5.0/24"
   availability_zone = "eu-west-2a"
   tags = {
-    Name        = "My First Subnet for Terraform Demo"
-    Environment = var.env
-    Owner       = "Paul"
-    Anotherowner    = "Ciprian"
+    Name         = "My First Subnet for Terraform Demo"
+    Environment  = var.env
+    Owner        = "Paul"
+    Anotherowner = "Ciprian"
   }
 }
