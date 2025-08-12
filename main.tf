@@ -41,4 +41,5 @@ resource "aws_subnet" "first" {
     Environment = "Dev"
     Owner       = "Paul"
     Anotherowner    = "Ciprian"
+  }
 }
