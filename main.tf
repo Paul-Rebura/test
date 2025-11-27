@@ -16,18 +16,6 @@ variable "env" {
   type        = string
 }
 
-
-resource "aws_s3_bucket" "name" {
-  bucket = "my-unique-bucket-terraform-demo-07-08-${var.env}"
-  tags = {
-    Name         = "My Unique Bucket for Terraform Demo"
-    Environment  = "Dev"
-    Owner        = "Paul"
-    Anotherowner = "Ciprian"
-    TheLastOwner = "Tommy"
-  }
-}
-
 resource "aws_vpc" "name" {
   cidr_block = "10.0.0.0/16"
   tags = {
