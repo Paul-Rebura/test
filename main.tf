@@ -16,25 +16,25 @@ variable "env" {
   type        = string
 }
 
-resource "aws_vpc" "name" {
-  cidr_block = "10.0.0.0/16"
-  tags = {
-    Name         = "My VPC for Terraform Demo ${env}"
-    Environment  = var.env
-    Owner        = "Paul"
-    Anotherowner = "Ciprian"
-  }
-}
+# resource "aws_vpc" "name" {
+#   cidr_block = "10.0.0.0/16"
+#   tags = {
+#     Name         = "My VPC for Terraform Demo ${env}"
+#     Environment  = var.env
+#     Owner        = "Paul"
+#     Anotherowner = "Ciprian"
+#   }
+# }
 
-resource "aws_subnet" "first" {
-  vpc_id            = aws_vpc.name.id
-  cidr_block        = "10.0.5.0/24"
-  availability_zone = "eu-west-2a"
-  tags = {
-    Name         = "My First Subnet for Terraform Demo"
-    Environment  = var.env
-    Owner        = "Paul"
-    Anotherowner = "Ciprian"
-  }
-}
+# resource "aws_subnet" "first" {
+#   vpc_id            = aws_vpc.name.id
+#   cidr_block        = "10.0.5.0/24"
+#   availability_zone = "eu-west-2a"
+#   tags = {
+#     Name         = "My First Subnet for Terraform Demo"
+#     Environment  = var.env
+#     Owner        = "Paul"
+#     Anotherowner = "Ciprian"
+#   }
+# }
 
