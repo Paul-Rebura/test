@@ -19,7 +19,7 @@ variable "env" {
 resource "aws_vpc" "name" {
   cidr_block = "10.0.0.0/16"
   tags = {
-    Name         = "My VPC for Terraform Demo ${env}"
+    Name         = "My VPC for Terraform Demo ${var.env}"
     Environment  = var.env
     Owner        = "Paul"
     Anotherowner = "Ciprian"
